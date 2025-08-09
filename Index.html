@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aji Nur Halim | Personal Website</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header>
+            <h1 id="typewriter">Aji Nur Halim</h1>
+            <p class="tagline">Musisi | Futsal Enthusiast | Developer Pemula</p>
+        </header>
+
+        <!-- About Section -->
+        <section class="about">
+            <h2>✨ Tentang Saya</h2>
+            <div class="about-content">
+                <p>
+                    <strong>Umur:</strong> 15 Tahun<br>
+                    <strong>Lokasi:</strong> Pemalang, Jawa Tengah<br><br>
+                    🎸 <strong>Musik:</strong> Suka main gitar/ukulele & nyanyi cover lagu indie.<br>
+                    ⚽ <strong>Futsal:</strong> Posisi favorit sayap kanan, fans MU!<br>
+                    💻 <strong>Coding:</strong> Mulai belajar sejak 14 tahun, fokus ke web development.
+                </p>
+            </div>
+        </section>
+
+        <!-- Project Section -->
+        <section class="project">
+            <h2>🚀 Proyek Terkini</h2>
+            <div class="project-card">
+                <h3>AvelineID</h3>
+                <p class="project-desc">Web Downloader ©2025 - Tools download praktis dengan antarmuka simpel.</p>
+                <p class="tech">Teknologi: HTML, CSS, JavaScript</p>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section class="gallery">
+            <h2>📸 Galeri</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">🎸 Musik</div>
+                <div class="gallery-item">⚽ Futsal</div>
+                <div class="gallery-item">💻 Coding</div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact">
+            <h2>📩 Kontak Saya</h2>
+            <div class="contact-links">
+                <a href="mailto:lennnhz6@gmail.com" class="btn">Email</a>
+                <a href="https://instagram.com/ajinurhlm_" target="_blank" class="btn">Instagram</a>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>© 2025 Aji Nur Halim | Dibuat dengan ❤️ dan CSS</p>
+        </footer>
+    </div>
+
+    <script>
+        // Typewriter Effect
+        const text = "Aji Nur Halim";
+        let i = 0;
+        function typeWriter() {
+            if (i < text.length) {
+                document.getElementById("typewriter").innerHTML += text.charAt(i);
+                i++;
+                setTimeout(typeWriter, 100);
+            }
+        }
+        window.onload = typeWriter;
+    </script>
+</body>
+</html>
