@@ -1,81 +1,799 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aji Nur Halim | Personal Website</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-</head>
-<body>
-    <div class="container">
-        <!-- Header Section -->
-        <header>
-            <h1 id="typewriter">Aji Nur Halim</h1>
-            <p class="tagline">Musisi | Futsal Enthusiast | Developer Pemula</p>
-        </header>
-
-        <!-- About Section -->
-        <section class="about">
-            <h2>✨ Tentang Saya</h2>
-            <div class="about-content">
-                <p>
-                    <strong>Umur:</strong> 15 Tahun<br>
-                    <strong>Lokasi:</strong> Pemalang, Jawa Tengah<br><br>
-                    🎸 <strong>Musik:</strong> Suka main gitar/ukulele & nyanyi cover lagu indie.<br>
-                    ⚽ <strong>Futsal:</strong> Posisi favorit sayap kanan, fans MU!<br>
-                    💻 <strong>Coding:</strong> Mulai belajar sejak 14 tahun, fokus ke web development.
-                </p>
-            </div>
-        </section>
-
-        <!-- Project Section -->
-        <section class="project">
-            <h2>🚀 Proyek Terkini</h2>
-            <div class="project-card">
-                <h3>AvelineID</h3>
-                <p class="project-desc">Web Downloader ©2025 - Tools download praktis dengan antarmuka simpel.</p>
-                <p class="tech">Teknologi: HTML, CSS, JavaScript</p>
-            </div>
-        </section>
-
-        <!-- Gallery Section -->
-        <section class="gallery">
-            <h2>📸 Galeri</h2>
-            <div class="gallery-grid">
-                <div class="gallery-item">🎸 Musik</div>
-                <div class="gallery-item">⚽ Futsal</div>
-                <div class="gallery-item">💻 Coding</div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section class="contact">
-            <h2>📩 Kontak Saya</h2>
-            <div class="contact-links">
-                <a href="mailto:lennnhz6@gmail.com" class="btn">Email</a>
-                <a href="https://instagram.com/ajinurhlm_" target="_blank" class="btn">Instagram</a>
-            </div>
-        </section>
-
-        <!-- Footer -->
-        <footer>
-            <p>© 2025 Aji Nur Halim | Dibuat dengan ❤️ dan CSS</p>
-        </footer>
-    </div>
-
-    <script>
-        // Typewriter Effect
-        const text = "Aji Nur Halim";
-        let i = 0;
-        function typeWriter() {
-            if (i < text.length) {
-                document.getElementById("typewriter").innerHTML += text.charAt(i);
-                i++;
-                setTimeout(typeWriter, 100);
+    <title>AvelineApp - Premium Game Guardian Scripts</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #6c5ce7;
+            --secondary: #a29bfe;
+            --dark: #1e1e2d;
+            --darker: #161622;
+            --light: #f5f6fa;
+            --accent: #00cec9;
+            --text: #e2e2e2;
+            --text-secondary: #b2b2b2;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            background-color: var(--darker);
+            color: var(--text);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            width: 100%;
+            height: 500px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            padding: 2rem 0;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 2rem;
+            font-weight: 700;
+            color: white;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            color: var(--accent);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+        }
+        
+        .nav-links a i {
+            margin-right: 8px;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+        
+        .hero {
+            padding: 5rem 0;
+            position: relative;
+        }
+        
+        .hero-content {
+            max-width: 600px;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            background: linear-gradient(to right, white, var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            justify-content: center;
+        }
+        
+        .btn i {
+            margin-right: 8px;
+        }
+        
+        .btn-primary {
+            background-color: var(--accent);
+            color: var(--dark);
+            box-shadow: 0 10px 20px rgba(0, 206, 201, 0.3);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(0, 206, 201, 0.4);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            margin-left: 1rem;
+        }
+        
+        .btn-outline:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+        
+        .features {
+            padding: 5rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+        
+        .section-title p {
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .feature-card {
+            background-color: var(--dark);
+            border-radius: 15px;
+            padding: 2.5rem 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            border-color: rgba(108, 92, 231, 0.3);
+        }
+        
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, rgba(108, 92, 231, 0.1), rgba(0, 206, 201, 0.1));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            color: var(--accent);
+        }
+        
+        .feature-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+        
+        .feature-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+        
+        .downloads {
+            padding: 5rem 0;
+            background-color: var(--dark);
+            border-radius: 50px 50px 0 0;
+            margin-top: -50px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .download-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .download-card {
+            background-color: var(--darker);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .download-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            border-color: rgba(108, 92, 231, 0.3);
+        }
+        
+        .download-img {
+            height: 180px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .download-img i {
+            z-index: 1;
+        }
+        
+        .download-img::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                transparent,
+                rgba(255, 255, 255, 0.1),
+                transparent
+            );
+            transform: rotate(45deg);
+            animation: shine 3s infinite;
+        }
+        
+        @keyframes shine {
+            0% {
+                left: -50%;
+            }
+            100% {
+                left: 150%;
             }
         }
-        window.onload = typeWriter;
-    </script>
+        
+        .download-info {
+            padding: 1.5rem;
+        }
+        
+        .download-info h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+            color: white;
+        }
+        
+        .download-info p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .download-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+            font-size: 0.85rem;
+        }
+        
+        .download-meta span {
+            display: flex;
+            align-items: center;
+            color: var(--text-secondary);
+        }
+        
+        .download-meta i {
+            margin-right: 5px;
+            color: var(--accent);
+        }
+        
+        .download-btn {
+            width: 100%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border: none;
+        }
+        
+        .download-btn:hover {
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+        }
+        
+        .update-info {
+            background-color: rgba(0, 206, 201, 0.1);
+            border-left: 4px solid var(--accent);
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .update-info h4 {
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .update-info h4 i {
+            margin-right: 8px;
+        }
+        
+        .update-info ul {
+            padding-left: 1.5rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        
+        .update-info li {
+            margin-bottom: 0.3rem;
+        }
+        
+        .contact {
+            padding: 5rem 0;
+            background-color: var(--darker);
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+        
+        .contact-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+        
+        .contact-info p {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .social-link {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text);
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            background-color: var(--primary);
+            color: white;
+            transform: translateY(-5px);
+        }
+        
+        .contact-form {
+            background-color: var(--dark);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .contact-form h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            color: white;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            background-color: rgba(108, 92, 231, 0.1);
+        }
+        
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        footer {
+            background-color: var(--dark);
+            padding: 3rem 0;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links li {
+            margin: 0 1rem;
+        }
+        
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+        
+        .copyright {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero-buttons {
+                display: flex;
+                flex-direction: column;
+            }
+            
+            .btn-outline {
+                margin-left: 0;
+                margin-top: 1rem;
+            }
+            
+            .downloads {
+                border-radius: 30px 30px 0 0;
+                margin-top: -30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="gradient-bg"></div>
+    
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <i class="fas fa-gamepad"></i>
+                    <span>AvelineApp</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#features"><i class="fas fa-star"></i> Features</a></li>
+                    <li><a href="#downloads"><i class="fas fa-download"></i> Downloads</a></li>
+                    <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Premium Game Guardian Scripts</h1>
+                <p>Download high-quality Game Guardian scripts for your favorite games. Our scripts are regularly updated and guaranteed to work.</p>
+                <div class="hero-buttons">
+                    <a href="#downloads" class="btn btn-primary"><i class="fas fa-download"></i> Download Now</a>
+                    <a href="https://youtube.com/@avelineid?si=shDP5N8P_C5AUFZw" target="_blank" class="btn btn-outline"><i class="fab fa-youtube"></i> YouTube</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Choose Our Scripts?</h2>
+                <p>Our Game Guardian scripts are designed with premium features and regular updates to ensure the best gaming experience.</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>High Performance</h3>
+                    <p>Optimized scripts that won't slow down your game or device, ensuring smooth gameplay.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Undetectable</h3>
+                    <p>Advanced techniques to prevent detection by game anti-cheat systems.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h3>Auto Update</h3>
+                    <p>Some scripts feature automatic updates to stay compatible with game updates.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>24/7 Support</h3>
+                    <p>Get help from our support team whenever you need assistance with our scripts.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-list"></i>
+                    </div>
+                    <h3>Multiple Features</h3>
+                    <p>Each script includes various features to enhance your gaming experience.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3>Virus Free</h3>
+                    <p>All scripts are thoroughly checked to ensure they're completely safe to use.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="downloads" id="downloads">
+        <div class="container">
+            <div class="section-title">
+                <h2>Download Scripts</h2>
+                <p>Get the latest Game Guardian scripts for popular mobile games.</p>
+            </div>
+            
+            <div class="download-grid">
+                <div class="download-card">
+                    <div class="download-img">
+                        <i class="fas fa-crosshairs"></i>
+                    </div>
+                    <div class="download-info">
+                        <h3>Dead Target VIP Script</h3>
+                        <p>Premium script for Dead Target with auto-update feature and multiple cheats.</p>
+                        <div class="download-meta">
+                            <span><i class="fas fa-download"></i> 15,420+</span>
+                            <span><i class="fas fa-calendar-alt"></i> Updated: 2025-08-09</span>
+                        </div>
+                        <a href="https://www.mediafire.com/file/iraacr00f6ic184/Script_DeadTarget_Vip_AutoUpdate.lua/file" class="btn download-btn" target="_blank"><i class="fas fa-download"></i> Download</a>
+                    </div>
+                </div>
+                
+                <div class="download-card">
+                    <div class="download-img">
+                        <i class="fas fa-subway"></i>
+                    </div>
+                    <div class="download-info">
+                        <h3>Subway Surfers VIP Script</h3>
+                        <p>Unlimited coins, keys and score multiplier for Subway Surfers.</p>
+                        <div class="download-meta">
+                            <span><i class="fas fa-download"></i> 23,781+</span>
+                            <span><i class="fas fa-calendar-alt"></i> Updated: 2025-08-09</span>
+                        </div>
+                        <a href="https://www.mediafire.com/file/flyxm6gwmx1kwjp/ScriptSubwaySurfers_Vip.lua/file" class="btn download-btn" target="_blank"><i class="fas fa-download"></i> Download</a>
+                    </div>
+                </div>
+                
+                <div class="download-card">
+                    <div class="download-img">
+                        <i class="fas fa-ghost"></i>
+                    </div>
+                    <div class="download-info">
+                        <h3>Game Guardian APK</h3>
+                        <p>Latest version of Game Guardian for running all our scripts.</p>
+                        <div class="update-info">
+                            <h4><i class="fas fa-info-circle"></i> Official Version</h4>
+                            <ul>
+                                <li>Latest stable version from official source</li>
+                                <li>Compatible with all scripts</li>
+                                <li>Supports Android 5.0+</li>
+                            </ul>
+                        </div>
+                        <div class="download-meta">
+                            <span><i class="fas fa-download"></i> 89,452+</span>
+                            <span><i class="fas fa-calendar-alt"></i> Version: 101.1</span>
+                        </div>
+                        <a href="https://gameguardian.net/forum/files/file/2-gameguardian/" class="btn download-btn" target="_blank"><i class="fas fa-download"></i> Download</a>
+                    </div>
+                </div>
+                
+                <div class="download-card">
+                    <div class="download-img">
+                        <i class="fas fa-futbol"></i>
+                    </div>
+                    <div class="download-info">
+                        <h3>Superkickoff Script</h3>
+                        <p>Advanced script for Superkickoff with multiple cheats and features.</p>
+                        <div class="update-info">
+                            <h4><i class="fas fa-info-circle"></i> What's New</h4>
+                            <ul>
+                                <li>Added unlimited stamina feature</li>
+                                <li>Fixed compatibility with latest game update</li>
+                                <li>Improved anti-ban protection</li>
+                            </ul>
+                        </div>
+                        <div class="download-meta">
+                            <span><i class="fas fa-download"></i> 8,742+</span>
+                            <span><i class="fas fa-calendar-alt"></i> Updated: 2025-08-05</span>
+                        </div>
+                        <a href="https://www.mediafire.com/file/9u2mrfp1vdrzd7s/%25E3%2580%258EEncSG%25E3%2580%258FSuperkickoff_V1_By_Lymm.lua/file" class="btn download-btn" target="_blank"><i class="fas fa-download"></i> Download</a>
+                    </div>
+                </div>
+                
+                <div class="download-card">
+                    <div class="download-img">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <div class="download-info">
+                        <h3>Virtual Space APK</h3>
+                        <p>Run Game Guardian safely without root using virtual space.</p>
+                        <div class="update-info">
+                            <h4><i class="fas fa-info-circle"></i> Important Note</h4>
+                            <ul>
+                                <li>Required for non-rooted devices</li>
+                                <li>Creates isolated environment</li>
+                                <li>Prevents game detection</li>
+                            </ul>
+                        </div>
+                        <div class="download-meta">
+                            <span><i class="fas fa-download"></i> 42,189+</span>
+                            <span><i class="fas fa-calendar-alt"></i> Version: 2.3.4</span>
+                        </div>
+                        <a href="https://www.mediafire.com/file/hqyty2i71nwolwx/Virtual.apk/file" class="btn download-btn" target="_blank"><i class="fas fa-download"></i> Download</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+                <p>Have questions or need support? Reach out to our team.</p>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <p>For script support, collaboration, or any inquiries, please contact us through the form or our social media.</p>
+                    
+                    <div class="social-links">
+                        <a href="https://youtube.com/@avelineid?si=shDP5N8P_C5AUFZw" class="social-link" target="_blank">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="https://instagram.com/ajinurhlm_" class="social-link" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="mailto:lennnhz6@gmail.com" class="social-link">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Send Message</h3>
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" placeholder="Enter your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" placeholder="Enter your email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" placeholder="Your message here..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <ul class="footer-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#downloads">Downloads</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+            </ul>
+            <p class="copyright">© 2025 AvelineApp. All rights reserved. Not affiliated with any game developers.</p>
+        </div>
+    </footer>
 </body>
 </html>
